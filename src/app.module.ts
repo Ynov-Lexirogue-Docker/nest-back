@@ -14,11 +14,9 @@ import { UsersModule } from './users/users.module';
 import { User } from './users/entities/user.entity';
 import { Role } from './users/roles/entities/role.entity';
 import { RolesModule } from './users/roles/roles.module';
-import { SentryModule } from '@sentry/nestjs/setup';
 
 @Module({
   imports: [
-    SentryModule.forRoot(),
     ConfigModule.forRoot({ isGlobal: true }),
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
